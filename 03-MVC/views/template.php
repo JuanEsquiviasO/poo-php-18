@@ -3,23 +3,58 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Template</title>
+	<style>
+		header{
+			position:relative;
+			margin:auto;
+			text-align:center;
+			padding:5px;	
+		}
+		
+		nav{
+			position:relative;
+			margin:auto;
+			width:100%;
+			height:auto;
+			background:black;
+		}
+
+		nav ul{
+			position:relative;
+			margin:auto;
+			width:50%;
+			text-align: center;
+		}
+
+		nav ul li{
+			display:inline-block;
+			width:24%;
+			line-height: 50px;
+			list-style: none;
+		}
+
+		nav ul li a{
+			color:white;
+			text-decoration: none;
+		}
+
+		section{
+			position:relative;
+			padding:20px;
+		}
+	</style>
 </head>
 <body>
 	<header>
 		<h1>Logo</h1>
 	</header>
 
-	<nav>
-		<ul>
-			<li><a href="">Intro</a></li>
-			<li><a href="">About Us</a></li>
-			<li><a href="">Services</a></li>
-			<li><a href="">Contact</a></li>
-		</ul>
-	</nav>
+	<?php 
+		include "modules/navigation.php";
+	 ?>
 
 	<section>
-		<h1>Homepage</h1>
+
 	</section>
 </body>
 </html>
