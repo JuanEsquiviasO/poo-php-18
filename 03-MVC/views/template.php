@@ -55,6 +55,14 @@
 
 	<section>
 
+	<?php 
+
+	$mvc = new MvcController();
+	$mvc -> linksPagesController();
+
+	?>
+
+
 	</section>
 </body>
 </html>
