@@ -11,7 +11,13 @@ class MvcController {
 	#interaction of user
 	#---------------------------------------------------------
 	public function linksPagesController() {
-		$linksController = $_GET["action"];
+		
+		if (isset($_GET["action"])) {
+			$linksController = $_GET["action"];
+		}
+		else {
+			$linksController = "index";
+		}
 
 		$answer = LinksPages::linksPagesModel($linksController);
 
