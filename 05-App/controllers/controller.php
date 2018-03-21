@@ -24,11 +24,19 @@ class MvcController{
 	#Users Register
 	#--------------------------------------
 	public function registroUsuarioController() {
-		$datosController = array("usuario"=>$_POST["usuario"], "password"=>$_POST["password"], "email"=>$_POST["email"]);
 
-		$respuesta = Datos::registroUsuarioModel($datosController, "usuarios");
+		if (isset($_POST["usuario"])) {
+			$datosController = array("usuario"=>$_POST["usuario"], "password"=>$_POST["password"], "email"=>$_POST["email"]);
+			$respuesta = Datos::registroUsuarioModel($datosController, "usuarios");
+			
+			if ($respuesta == "success") {
+				header("location:index.php?action=ok");
+			}
+			else {
+				header("location:index.php");
+			}
+		}
 
-		echo $respuesta;
 	}
 }
 
