@@ -23,6 +23,13 @@ class Datos extends Conexion{
 			return "error";
 		}
 	}
+
+	#users login
+	#--------------------------------------------
+	public function ingresoUsuarioController($datosModel, $tabla) {
+		#prepare
+		$stmt = Conexion::conectar()->prepare();
+	}
 }
 
 ?>
