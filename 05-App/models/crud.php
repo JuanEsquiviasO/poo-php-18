@@ -10,7 +10,6 @@ class Datos extends Conexion{
 	public function registroUsuarioModel($datosModel, $tabla) {
 		#prepare
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(usuario, password, email) VALUES (:usuario,:password,:email)");
-
 		#bindParam()
 		$stmt->bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datosModel["password"], PDO::PARAM_STR);
@@ -26,9 +25,13 @@ class Datos extends Conexion{
 
 	#users login
 	#--------------------------------------------
-	public function ingresoUsuarioController($datosModel, $tabla) {
+	public function ingresoUsuarioModel($datosModel, $tabla) {
 		#prepare
-		$stmt = Conexion::conectar()->prepare();
+		$stmt = Conexion::conectar()->prepare("SELECT usuario, password FROM $tabla WHERE usuario = :usuario");
+		#bindParam()
+		$stmt->bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
+		$stmt->execute();
+		return $stmt->fetch();
 	}
 }
 

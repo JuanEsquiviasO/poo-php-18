@@ -14,6 +14,10 @@ class Paginas{
 			$module = "views/modules/registro.php";
 		}
 
+		else if($enlaces == "fallo"){
+			$module = "views/modules/ingresar.php";
+		}
+
 		else{
 			$module = "views/modules/registro.php";
 		}

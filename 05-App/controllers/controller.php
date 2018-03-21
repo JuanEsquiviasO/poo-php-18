@@ -46,13 +46,12 @@ class MvcController{
 			$datosController = array("usuario"=>$_POST["usuarioIngreso"], "password"=>$_POST["passwordIngreso"]);
 			$respuesta = Datos::ingresoUsuarioModel($datosController, "usuarios");
 			
-			echo $respuesta;
-			// if ($respuesta == "success") {
-			// 	header("location:index.php?action=ok");
-			// }
-			// else {
-			// 	header("location:index.php");
-			// }
+			if ($respuesta["usuario"] == $_POST["usuarioIngreso"] && $respuesta["password" == $_POST["passwordIngreso"]]) {
+				header("location:index.php?action=usuarios");
+			}
+			else {
+				header("location:index.php?action=fallo");
+			}
 		}
 	}
 
