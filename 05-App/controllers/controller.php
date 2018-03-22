@@ -78,7 +78,20 @@ class MvcController{
 	public function editarUsuarioController() {
 		$datosController = $_GET["id"];
 		$respuesta = Datos::editarUsuarioModel($datosController, "usuarios");
-		echo $respuesta[1];
+		echo '<input type="hidden" name="'.$respuesta["id"].'" name="usuarioEditar" required>
+					<input type="text" value="'.$respuesta["usuario"].'" name="usuarioEditar" required>
+					<input type="text" value="'.$respuesta["password"].'" name="passwordEditar" required>
+					<input type="email" value="'.$respuesta["email"].'" name="emailEditar" required>
+					<input type="submit" value="Actualizar">';
+	}
+
+	#Update users
+	#-------------------------------------------
+	public function actualizarUsuarioController() {
+		if(isset($_POST["usuarioEditar"])) {
+			$datos = array("id"=>$_POST["id"], "usuario"=>$_POST["usuario"], "password"=>$_POST["password"], "email"=>$_POST["email"]);
+
+		}
 	}
 }
 
