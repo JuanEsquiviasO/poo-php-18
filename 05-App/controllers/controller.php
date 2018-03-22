@@ -67,10 +67,18 @@ class MvcController{
 				<td>'.$item["usuario"].'</td>
 				<td>'.$item["password"].'</td>
 				<td>'.$item["email"].'</td>
-				<td><button>Editar</button></td>
+				<td><a href="index.php?action=editar&id='.$item["id"].'"><button>Editar</button></a></td>
 				<td><button>Borrar</button></td>
 			</tr>';
 		}
+	}
+
+	#Edit users
+	#-------------------------------------------
+	public function editarUsuarioController() {
+		$datosController = $_GET["id"];
+		$respuesta = Datos::editarUsuarioModel($datosController, "usuarios");
+		echo $respuesta[1];
 	}
 }
 

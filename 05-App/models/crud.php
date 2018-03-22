@@ -49,6 +49,19 @@ class Datos extends Conexion{
 		$stmt->close();
 	}
 
+
+	#Edit users
+	#--------------------------------------------
+	public function editarUsuarioModel($datosModel, $tabla) {
+		#prepare
+		$stmt = Conexion::conectar()->prepare("SELECT id, usuario, password, email FROM $tabla WHERE id = :id");
+		$stmt->bindParam(":id", $datosModel, PDO::PARAM_INT);
+		$stmt->execute();
+
+		return $stmt->fetch();
+
+		$stmt->close();
+	}
 }
 
 ?>
