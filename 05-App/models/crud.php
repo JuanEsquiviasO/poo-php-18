@@ -21,6 +21,7 @@ class Datos extends Conexion{
 		else {
 			return "error";
 		}
+		$stmt->close();
 	}
 
 	#users login
@@ -32,6 +33,8 @@ class Datos extends Conexion{
 		$stmt->execute();
 
 		return $stmt->fetch();
+
+		$stmt->close();
 	}
 
 	#View users
@@ -42,6 +45,8 @@ class Datos extends Conexion{
 		$stmt->execute();
 
 		return $stmt->fetchAll();
+
+		$stmt->close();
 	}
 
 }
