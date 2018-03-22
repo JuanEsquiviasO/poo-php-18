@@ -12,13 +12,10 @@
 		</thead>
 
 		<tbody>
-			
+			<?php 
+				$ingreso = new MvcController();
+				$ingreso -> vistaUsuariosController();
+			?>
 		</tbody>
 	</table
 
-<?php 
-
-$ingreso = new MvcController();
-$ingreso -> vistaUsuariosController();
-
-?>
