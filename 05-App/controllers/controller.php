@@ -55,6 +55,18 @@ class MvcController{
 		}
 	}
 
+	#View of users
+	#-------------------------------------------
+	public function vistaUsuariosController() {
+		$respuesta = Datos::vistaUsuariosModel("usuarios");
+		echo'<tr>
+				<td>'.$respuesta[0][1].'</td>
+				<td></td>
+				<td></td>
+				<td><button>Editar</button></td>
+				<td><button>Borrar</button></td>
+			</tr>';
+	}
 }
 
 ?>

@@ -28,11 +28,22 @@ class Datos extends Conexion{
 	public function ingresoUsuarioModel($datosModel, $tabla) {
 		#prepare
 		$stmt = Conexion::conectar()->prepare("SELECT usuario, password FROM $tabla WHERE usuario = :usuario");
-		#bindParam()
 		$stmt->bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
 		$stmt->execute();
+
 		return $stmt->fetch();
 	}
+
+	#View users
+	#--------------------------------------------
+	public function vistaUsuariosModel($tabla) {
+		#prepare
+		$stmt = Conexion::conectar()->prepare("SELECT id, usuario, password, email FROM $tabla");
+		$stmt->execute();
+
+		return $stmt->fetchAll();
+	}
+
 }
 
 ?>
