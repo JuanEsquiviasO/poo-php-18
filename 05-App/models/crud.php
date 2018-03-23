@@ -73,7 +73,7 @@ class Datos extends Conexion{
 		$stmt->bindParam(":usuario", $datosModel["usuario"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datosModel["password"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datosModel["email"], PDO::PARAM_STR);
-		$stmt->bindParam(":id", $datosModel["id"], PDO::PARAM_STR);
+		$stmt->bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
 
 		if ($stmt->execute()) {
 			return "success";
@@ -83,6 +83,24 @@ class Datos extends Conexion{
 		}
 		$stmt->close();
 	}
+
+
+	#Delete user
+	#--------------------------------------------
+	public function borrarUsuarioModel($datosModel, $tabla) {
+	#prepare
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+		$stmt->bindParam(":id", $datosModel, PDO::PARAM_INT);
+
+		if ($stmt->execute()) {
+			return "success";
+		}
+		else {
+			return "error";
+		}
+		$stmt->close();
+	}
+
 }
 
 ?>
