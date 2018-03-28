@@ -54,15 +54,22 @@ class MvcController{
 				$encriptar = crypt($_POST["passwordIngreso"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 				$datosController = array("usuario"=>$_POST["usuarioIngreso"], "password"=>$encriptar);
 				$respuesta = Datos::ingresoUsuarioModel($datosController, "usuarios");
+
+				$intentos = $respuesta["intentos"];
+				$maximoIntentos = 2;
+				if ($intentos < $maximoIntentos) {
+					if ($respuesta["usuario"] == $_POST["usuarioIngreso"] && $respuesta["password" == $encriptar]) {
+						session_start();
+						$_SESSION["validar"] = true;
+						header("location:index.php?action=usuarios");
+					}
+					else {
+						++$intentos;
+						
+						header("location:index.php?action=fallo");
+					}
+				}
 				
-				if ($respuesta["usuario"] == $_POST["usuarioIngreso"] && $respuesta["password" == $encriptar]) {
-					session_start();
-					$_SESSION["validar"] = true;
-					header("location:index.php?action=usuarios");
-				}
-				else {
-					header("location:index.php?action=fallo");
-				}
 			}
 		}
 	}
