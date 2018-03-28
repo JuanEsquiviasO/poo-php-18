@@ -97,6 +97,8 @@
 </section>
 
 <script src="views/js/validateRegister.js"></script>
+<script src="views/js/validateInput.js"></script>
+<script src="views/js/validateCambio.js"></script>
 </body>
 
 </html>
