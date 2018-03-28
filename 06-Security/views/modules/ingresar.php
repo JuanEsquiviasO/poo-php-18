@@ -14,6 +14,10 @@ if (isset($_GET["action"])) {
 	if ($_GET["action"] == "fallo") {
 		echo "Error to enter!!";
 	}
+
+	if ($_GET["action"] == "fallo3intentos") {
+		echo "Has failed 3 times to enter, fill the CAPTCHA!!";
+	}
 }
 
 ?>

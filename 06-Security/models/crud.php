@@ -37,6 +37,23 @@ class Datos extends Conexion{
 		$stmt->close();
 	}
 
+	#intentos usuario
+	#--------------------------------------------
+	public function intentosUsuarioModel($datosModel, $tabla) {
+		#prepare
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET intentos = :intentos WHERE usuario = :usuario");
+		$stmt->bindParam(":intentos", $datosModel["actualizarIntentos"], PDO::PARAM_INT);
+		$stmt->bindParam(":usuario", $datosModel["usuarioActual"], PDO::PARAM_STR);
+
+		if ($stmt->execute()) {
+			return "success";
+		}
+		else {
+			return "error";
+		}
+		$stmt->close();
+	}
+
 	#View users
 	#--------------------------------------------
 	public function vistaUsuariosModel($tabla) {
