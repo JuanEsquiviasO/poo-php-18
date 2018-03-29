@@ -2,7 +2,22 @@
 
 $("#usuarioRegistro").change(function(){
 	var usuario = $("#usuarioRegistro").val();
-	console.log('usuario', usuario);
+
+	var datos = new FormData();
+	datos.append("validarUsuario", usuario);
+
+	$.ajax({
+		url: "views/modules/ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contenType: false,
+		proccessData: false,
+		success: function(respuesta) {
+			console.log(respuesta);
+		}
+	});
+
 });
 
 
