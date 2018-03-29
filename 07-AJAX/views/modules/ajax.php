@@ -6,8 +6,8 @@ require_once "../../models/crud.php";
 class Ajax {
 	public $validarUsuario;
 	public function validarUsuarioAjax() {
-		$datos = $this->$validarUsuario;
-		$respuesta = MvcController::vistaUsuarioController($datos);
+		$datos = $this->validarUsuario;
+		$respuesta = MvcController::validarUsuarioController($datos);
 		echo $respuesta;
 	}
 }

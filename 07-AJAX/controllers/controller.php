@@ -153,4 +153,17 @@ class MvcController{
 			}
 		}
 	}
+
+	#Validate users existent
+	#-------------------------------------------
+	public function validarUsuarioController($validarUsuario) {
+		$datosController = $validarUsuario;
+		$respuesta = Datos::validarUsuarioModel($datosController, "usuarios"); 
+		if (count($respuesta["usuario"]) > 0) {
+			echo 0;
+		}
+		else {
+			echo 1;
+		}
+	}
 }

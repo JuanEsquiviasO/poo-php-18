@@ -7,20 +7,22 @@ $("#usuarioRegistro").change(function(){
 	datos.append("validarUsuario", usuario);
 
 	$.ajax({
-		url: "views/modules/ajax.php",
-		method: "POST",
+		url:"views/modules/ajax.php",
+		method:"POST",
 		data: datos,
 		cache: false,
-		contenType: false,
-		proccessData: false,
+		contentType: false,
+		processData: false,
 		success: function(respuesta) {
-			console.log(respuesta);
+			if (respuesta == 0) {
+				$("label[for='usuarioRegistro'] span").html('<p>This user has already done in a DB</p>');
+			}
+			else {
+				$("label[for='usuarioRegistro'] span").html("");
+			}
 		}
 	});
-
 });
-
-
 
 // End Validate existing user with AJAX
 

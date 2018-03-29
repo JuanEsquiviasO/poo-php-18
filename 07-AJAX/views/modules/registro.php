@@ -1,6 +1,6 @@
 <h1>REGISTRO DE USUARIO</h1>
 <form method="post" onsubmit="return validateRegister()">
-	<label for="usuarioRegistro">User</label>
+	<label for="usuarioRegistro">User<span></span></label>
 	<input type="text" placeholder="maximum 6 characters" maxlength="6" name="usuarioRegistro" id="usuarioRegistro" required>
 
 	<label for="passwordRegistro">Password</label>
