@@ -6,5 +6,3 @@ class Conexion{
 		return $link;
 	}
 }
-
-?>
