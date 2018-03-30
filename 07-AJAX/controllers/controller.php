@@ -1,8 +1,8 @@
 <?php
-class MvcController{
+class MvcController {
 	#LLAMADA A LA PLANTILLA
 	#-------------------------------------
-	public function pagina(){	
+	public function pagina() {	
 		include "views/template.php";
 	}
 	#ENLACES
@@ -160,6 +160,19 @@ class MvcController{
 		$datosController = $validarUsuario;
 		$respuesta = Datos::validarUsuarioModel($datosController, "usuarios"); 
 		if (count($respuesta["usuario"]) > 0) {
+			echo 0;
+		}
+		else {
+			echo 1;
+		}
+	}
+
+	#Validate email existent
+	#-------------------------------------------
+	public function validarEmailController($validarEmail) {
+		$datosController = $validarEmail;
+		$respuesta = Datos::validarEmailModel($datosController, "usuarios"); 
+		if (count($respuesta["email"]) > 0) {
 			echo 0;
 		}
 		else {
