@@ -35,6 +35,12 @@
 		COLUMNA CONTENIDO
 		======================================-->
 
+		<?php 
+
+			$modulos = new Enlaces();
+			$modulos -> enlacesController();
+
+		?>
 
 		<!--====  Fin de COLUMNA CONTENIDO  ====-->
 		</section>
