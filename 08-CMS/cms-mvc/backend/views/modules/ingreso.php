@@ -9,4 +9,11 @@ FORMULARIO DE INGRESO
 		<input class="form-control formIngreso btn btn-primary" type="submit" value="Enviar">
 	</form>
 </div>
+
+<?php 
+
+	$ingreso = new Ingreso();
+	$ingreso -> ingresoController ();
+
+?>
 <!--====  Fin de FORMULARIO DE INGRESO  ====-->
