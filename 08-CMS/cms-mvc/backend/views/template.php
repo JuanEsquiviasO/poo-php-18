@@ -30,22 +30,18 @@
 <body>
 	<div class="container-fluid">
 		<section class="row">
-
 		<!--=====================================
 		COLUMNA CONTENIDO
 		======================================-->
-
 		<?php 
-
 			$modulos = new Enlaces();
 			$modulos -> enlacesController();
-
 		?>
-
 		<!--====  Fin de COLUMNA CONTENIDO  ====-->
 		</section>
 	</div>
 	<script src="views/js/script.js"></script>
 	<script src="views/js/validarIngreso.js"></script>
+	<script src="views/js/gestorSlide.js"></script>
 </body>
 </html>

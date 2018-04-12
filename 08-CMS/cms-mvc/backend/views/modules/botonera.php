@@ -5,7 +5,6 @@ COLUMNA BOTONERA
 	<div id="logo" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<img src="views/images/logotipo.jpg" class="img-responsive" alt="Image">
 	</div>
-
 	<!--=====================================
 	BOTONERA MOVIL            
 	======================================-->
@@ -16,7 +15,6 @@ COLUMNA BOTONERA
 			<span class="icon-bar"></span>
 		</button>
 	</div>
-
 	<!--====  Fin de BOTONERA MOVIL  ====-->
 	<nav id="botonera" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse navbar-collapse text-center">
 		<ul class="nav navbar">
