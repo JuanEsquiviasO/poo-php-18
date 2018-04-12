@@ -19,30 +19,7 @@ SLIDE ADMINISTRABLE
 	<hr>
 	<p><span class="fa fa-arrow-down"></span>  Arrastra aquí tu imagen, tamaño recomendado: 1600px * 600px</p>
 	<ul id="columnasSlide">
-		<!-- <li class="bloqueSlide">
-			<span class="fa fa-times"></span>
-			<img src="views/images/slide/slide01.jpg" class="handleImg">
-		</li>
-		<li class="bloqueSlide">
-			<span class="fa fa-times"></span>
-			<img src="views/images/slide/slide02.jpg" class="handleImg">
-		</li>
-		<li class="bloqueSlide">
-			<span class="fa fa-times"></span>
-			<img src="views/images/slide/slide03.jpg" class="handleImg">
-		</li>
-		<li class="bloqueSlide">
-			<span class="fa fa-times"></span>
-			<img src="views/images/slide/slide04.jpg" class="handleImg">
-		</li>
-		<li class="bloqueSlide">
-			<span class="fa fa-times"></span>
-			<img src="views/images/slide/slide01.jpg" class="handleImg">
-		</li>
-		<li class="bloqueSlide">
-			<span class="fa fa-times"></span>
-			<img src="views/images/slide/slide02.jpg" class="handleImg">
-		</li> -->
+		
 	</ul>
 	<button id="ordenarSlide" class="btn btn-warning pull-right" style="margin:10px 30px">Ordenar Slides</button>
 	<button id="guardarSlide" class="btn btn-primary pull-right" style="display:none; margin:10px 30px">Guardar Orden Slides</button>
@@ -134,3 +111,30 @@ SLIDE ADMINISTRABLE
 	<div id="slideDer"><span class="fa fa-chevron-right"></span></div>
 </div> -->
 <!--====  Fin de SLIDE ADMINISTRABLE  ====-->
+
+
+
+<!-- <li class="bloqueSlide">
+			<span class="fa fa-times"></span>
+			<img src="views/images/slide/slide01.jpg" class="handleImg">
+		</li>
+		<li class="bloqueSlide">
+			<span class="fa fa-times"></span>
+			<img src="views/images/slide/slide02.jpg" class="handleImg">
+		</li>
+		<li class="bloqueSlide">
+			<span class="fa fa-times"></span>
+			<img src="views/images/slide/slide03.jpg" class="handleImg">
+		</li>
+		<li class="bloqueSlide">
+			<span class="fa fa-times"></span>
+			<img src="views/images/slide/slide04.jpg" class="handleImg">
+		</li>
+		<li class="bloqueSlide">
+			<span class="fa fa-times"></span>
+			<img src="views/images/slide/slide01.jpg" class="handleImg">
+		</li>
+		<li class="bloqueSlide">
+			<span class="fa fa-times"></span>
+			<img src="views/images/slide/slide02.jpg" class="handleImg">
+		</li> -->
