@@ -1,3 +1,17 @@
+<?php 
+
+session_start();
+
+if(!$_SESSION["validar"]) {
+	header("location:ingreso");
+	exit();
+}
+
+include "views/modules/botonera.php";
+include "views/modules/cabezote.php";
+
+?>
+
 <!--=====================================
 INICIO       
 ======================================-->
@@ -9,7 +23,7 @@ INICIO
 	<hr>
 	<ul>
 		<li class="botonesInicio">
-			<a href="slide.html">
+			<a href="slide">
 			<div style="background:#4CF53A">
 			<span class="fa fa-toggle-right"></span>
 			<p>Slide</p>
@@ -17,7 +31,7 @@ INICIO
 			</a>
 		</li>
 		<li class="botonesInicio">
-			<a href="articulos.html">
+			<a href="articulos">
 			<div style="background:#F640DA">
 			<span class="fa fa-file-text-o"></span>
 			<p>Artículos</p>
@@ -25,7 +39,7 @@ INICIO
 			</a>
 		</li>
 		<li class="botonesInicio">
-			<a href="galeria.html">
+			<a href="galeria">
 			<div style="background:#04E6DE">
 			<span class="fa fa-image"></span>
 			<p>Imágenes</p>
@@ -33,7 +47,7 @@ INICIO
 			</a>
 		</li>
 		<li class="botonesInicio">
-			<a href="videos.html">
+			<a href="videos">
 			<div style="background:#1434AD"> 
 			<span class="fa fa-film"></span>
 			<p>Videos</p>
@@ -41,7 +55,7 @@ INICIO
 			</a>
 		</li>
 		<li class="botonesInicio">
-			<a href="suscriptores.html">
+			<a href="suscriptores">
 			<div style="background:#ED3E3E">
 			<span class="fa fa-users"></span>
 			<p>Suscriptores</p>

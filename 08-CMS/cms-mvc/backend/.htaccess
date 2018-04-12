@@ -1,0 +1,8 @@
+#prevent the view of contents of a directory
+
+Options All -Indexes
+
+#URLS friendly
+
+RewriteEngine on
+RewriteRule ^(\w+)$ index.php?action=$1
