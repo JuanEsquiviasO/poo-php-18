@@ -17,7 +17,7 @@ SLIDE ADMINISTRABLE
 ======================================-->
 <div id="imgSlide" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
 	<hr>
-	<p><span class="fa fa-arrow-down"></span>  Arrastra aquí tu imagen, tamaño recomendado: 1600px * 600px</p>
+	<p><span class="fa fa-arrow-down"></span>  Arrastra aquí tu imagen, tamaño recomendado: 1600px * 600px y peso recomendado 2MB</p>
 	<ul id="columnasSlide">
 		
 	</ul>
