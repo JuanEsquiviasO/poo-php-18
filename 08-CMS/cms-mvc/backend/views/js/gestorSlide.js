@@ -53,7 +53,7 @@ $("#columnasSlide").on("drop", function(e){
 		$(".alerta").remove();
 	}
 	else {
-		$("#columnasSlide").before('<div class="alert alert-warning alerta text-center">The file must be JPG or PNG format</div>')
+		$("#columnasSlide").before('<div class="alert alert-warning alerta text-center">The file must be JPG or PNG format</div>');
 	}
 
 	// Upload image to the server
@@ -61,9 +61,25 @@ $("#columnasSlide").on("drop", function(e){
 		var datos = new FormData();
 		datos.append("imagen", imagen);
 		$.ajax({
-			
+			url:"views/ajax/gestorSlide.php",
+			method: "POST",
+			data: datos,
+			cache: false,
+			contentType: false,
+			processData: false,
+			beforeSend: function(){
+				$("#columnasSlide").before('<img src="views/images/status.gif" id="status">');
+			},
+			success: function(respuesta){
+				if (respuesta == 0) {
+					$("#columnasSlide").before('<div class="alert alert-warning alerta text-center">The image is less than 1600px 600px</div>');
+				}
+				else {
+					
+				}
+			}
 		});
 	}
-});
+});	
 
 /*===== Drop image =====*/
