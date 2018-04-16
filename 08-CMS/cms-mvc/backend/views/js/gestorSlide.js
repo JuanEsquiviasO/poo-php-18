@@ -67,15 +67,18 @@ $("#columnasSlide").on("drop", function(e){
 			cache: false,
 			contentType: false,
 			processData: false,
+			dataType: "json",
 			beforeSend: function(){
 				$("#columnasSlide").before('<img src="views/images/status.gif" id="status">');
 			},
 			success: function(respuesta){
+				$("#status").remove();
 				if (respuesta == 0) {
 					$("#columnasSlide").before('<div class="alert alert-warning alerta text-center">The image is less than 1600px 600px</div>');
 				}
 				else {
-					
+					$("#columnasSlide").css({"height":"auto"});
+					$("#columnasSlide").append('<li class="bloqueSlide"><span class="fa fa-times"></span><img src="'+respuesta["ruta"].slice(6)+'" class="handleImg"></li>');
 				}
 			}
 		});
