@@ -29,9 +29,21 @@ class GestorSlideModel {
 	#Show image in the view
 	#------------------------------------------------------------------------------------
 	public function mostrarImagenVistaModel($tabla) {
-		$stmt = Conexion::conectar()->prepare("SELECT ruta, titulo, descripcion FROM $tabla ORDER BY orden ASC");
+		$stmt = Conexion::conectar()->prepare("SELECT id, ruta, titulo, descripcion FROM $tabla ORDER BY orden ASC");
 		$stmt->execute();
 		return $stmt -> fetchAll();
 		$stmt -> close();
+	}
+
+	public function eliminarSlideModel($datos, $tabla) {
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+		$stmt -> bindParam(":id", $datos["idSlide"], PDO::PARAM_INT);
+		if($stmt->execute()) {
+			return "ok";
+		}
+		else {
+			"error";
+		}
+		$stmt->close();
 	}
 }

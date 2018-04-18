@@ -17,11 +17,32 @@ class Ajax {
 		$respuesta = GestorSlide::mostrarImagenController($datos);
 		echo $respuesta;
 	}
+
+	#Delete image of slide
+	#-----------------------------------------------------------
+	public $idSlide;
+	public $rutaSlide;
+
+	public function eliminarSlideAjax(){
+		$datos = array("idSlide" => $this->idSlide, "rutaSlide" => $this->rutaSlide);
+		$respuesta = GestorSlide::eliminarSlideController($datos);
+		echo $respuesta;
+	}
 }
 
 #Objects
 #-------------------------------------------------------------
-$a = new Ajax();
-$a -> nombreImagen = $_FILES["imagen"]["name"];
-$a -> imagenTemporal = $_FILES["imagen"]["tmp_name"];
-$a -> gestorSlideAjax();
+if (isset($_FILES["imagen"]["name"])) {
+	$a = new Ajax();
+	$a -> nombreImagen = $_FILES["imagen"]["name"];
+	$a -> imagenTemporal = $_FILES["imagen"]["tmp_name"];
+	$a -> gestorSlideAjax();
+}
+
+if(isset($_POST["idSlide"])){
+	$b = new Ajax();
+	$b -> idSlide = $_POST["idSlide"];
+	$b -> rutaSlide = $_POST["rutaSlide"];
+	$b -> eliminarSlideAjax();
+}
+
